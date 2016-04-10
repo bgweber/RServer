@@ -115,6 +115,7 @@ shinyServer(function(input, output, session) {
     input$reloadPerf 
     invalidateLater(5000, session)
 
+    
     tryCatch({
       files <- list.files(path = logDir)
       
@@ -123,47 +124,43 @@ shinyServer(function(input, output, session) {
       
       for (file in files) {
         if (length(grep(".csv", file)) > 0) { 
-          
-        path <- paste0(logDir, file)
-        
-        tryCatch({
-          data <- read.csv(file = paste0(logDir, file))
-        }, error = function(cond) {
-          Sys.sleep(0.1)
-          data <- read.csv(file = paste0(logDir, file))
-        })
-        
-        # check for recent data 
-        newDates <- as.POSIXlt(data$UpdateTime/1000, origin="1970-01-01", tz="GMT")  
-        if (as.numeric(Sys.time() - max(newDates), units = "secs") < 20)  {    
-          
-          cpu <- data$CpuLoad*100.0
-          while (length(cpu) < 200) {
-            cpu <- c(NA, cpu)
+          path <- paste0(logDir, file)
+
+          tryCatch({
+            data <- read.csv(file = paste0(logDir, file))
+          }, error = function(cond) {
+            Sys.sleep(0.1)
+            data <- read.csv(file = paste0(logDir, file))
+          })
+
+          # check for recent data 
+          newDates <- as.POSIXlt(data$UpdateTime/1000, origin="1970-01-01", tz="GMT")  
+          if (as.numeric(Sys.time() - max(newDates), units = "secs") < 20)  {    
+
+            cpu <- data$CpuLoad*100.0
+            if (is.null(dates)) {
+              dates <- newDates  
+            }  
+
+            timeData <- xts(cpu, order.by = dates)
+            colnames(timeData) <- strsplit(file, "\\.")[[1]][1] 
+            
+            if (is.null(combined)) {
+              combined <- timeData 
+            }
+            else {
+              combined <- merge.xts(combined, timeData) 
+            } 
           }
           
-          if (is.null(dates)) {
-            dates <- newDates  
-          }  
-          
-          timeData <- xts(cpu, order.by = dates)
-          colnames(timeData) <- strsplit(strsplit(file, "-")[[1]][2], "\\.")[[1]][1] 
-          
-          if (is.null(combined)) {
-            combined <- timeData 
-          }
-          else {
-            combined <- merge.xts(combined, timeData) 
-          } 
-        }
-        
-      }   
+        }   
       } 
-      
+
       dygraph(combined) %>%
         dyLegend(labelsSeparateLines = T, width = 170, show = "always") %>%       
         dyAxis("y", label = "CPU Load (%)", valueRange = c(0, 100.2))       
     }, error = function(cond) {
+      print(cond)
       return (NULL)
     })
   })
@@ -200,13 +197,9 @@ shinyServer(function(input, output, session) {
           } 
           
           mem <- data$UsedMem.GB.
-          while (length(mem) < 200) {
-            mem <- c(NA, mem)
-          }
-          
-          
+
           timeData <- xts(mem, order.by = dates)
-          colnames(timeData) <- strsplit(strsplit(file, "-")[[1]][2], "\\.")[[1]][1] 
+          colnames(timeData) <- strsplit(file, "\\.")[[1]][1] 
           maxY <- max(maxY, max(data$UsedMem.GB.))
           
           if (is.null(combined)) {
