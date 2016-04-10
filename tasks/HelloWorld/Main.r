@@ -1,1 +1,1 @@
-cat("Hello World!")
+print("Hello World!")
