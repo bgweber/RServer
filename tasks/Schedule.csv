@@ -1,3 +1,3 @@
 TaskName,Path,Script,Frequency,Time,Owner,EmailOnSuccess,Params,isShiny 
-EmailTest,/tasks/daily/EmailTest,sendmail.r,Hourly,19:35, beweber@ea.com, true,,false 
-EmailTest,/tasks/daily/EmailTest,sendmail.r,Daily,11:00, beweber@ea.com, true,,false 
+EmailTest,/tasks/HelloWorld,Main.r,Hourly,19:35, beweber@ea.com, true,,false 
+EmailTest,/tasks/HelloWorld,Main.r,Daily,11:00, beweber@ea.com, true,,false 
