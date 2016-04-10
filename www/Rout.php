@@ -35,7 +35,7 @@ if ($running > 0) {
 	$task =$_GET['task'];
 	$log =$_GET['log'];
 	$path = "C:/Tasks/RServer/scripts/" . $task . "/" . $log;
-//	$path = "C:/Users/beweber/workspace/RScripts/scripts/" . $task . "/" . $log;
+	$path = "C:/workspace/RServer/scripts/" . $task . "/" . $log;
 }
 else {
 	$path =$_GET['path'];
