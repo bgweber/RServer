@@ -1,4 +1,4 @@
 TaskName,Path,Script,Frequency,Time,Owner,EmailOnSuccess,Params,isShiny 
 Hello_World,/tasks/HelloWorld,Main.r,Hourly,19:35, bgweber@gmail.com, true,,false 
 Hello_Daily,/tasks/HelloWorld,Main.r,Daily,11:00, bgweber@gmail.com, true,,false 
-Server_Monitor,/tasks/ShinyMonitor,Main.r,Now,, bgweber@gmail.com, false,,false
+Server_Monitor,/tasks/ShinyMonitor,Main.r,Now,, bgweber@gmail.com, false,,true
