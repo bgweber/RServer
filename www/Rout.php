@@ -1,3 +1,7 @@
+<?php
+$running = array_key_exists('task', $_GET);
+?>
+
 <html>
 <head>
   <title>R Log</title>
