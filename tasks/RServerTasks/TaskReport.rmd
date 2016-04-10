@@ -1,0 +1,21 @@
+---
+title: "R Server Tasks"
+output: html_document
+---
+
+Last report update:
+```{r, echo=FALSE, results='asis'}
+cat(format(Sys.time(), "%a %b %d %X %Y %Z"))
+```
+
+```{r, echo=FALSE, warning = FALSE}
+source("LogParser.r")
+events <- loadTaskData()
+
+if (nrow(events) > 0) {
+  datatable(events, rownames = FALSE, options = list(pageLength = 20), colnames = c("Task Name", "Completion Date (PST)", "Result")) %>% 
+    formatStyle('Outcome', color = styleEqual(c('Aborted', 'Failure', 'Success'), c('red', 'red', 'green')), fontWeight = 'bold') 
+} else {
+  cat("No scripts have completed") 
+}
+```
