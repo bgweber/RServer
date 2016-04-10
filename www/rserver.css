@@ -1,0 +1,262 @@
+table, th, td { 
+  border: 1px solid black; 
+}
+
+body {
+	font-family: 'DINPro-Regular','PT Sans',Calibri,"Helvetica Neue",Helvetica,verdana, Arial,sans-serif;
+	font-size: 14px;
+	line-height: 14px;
+	height: 100%;
+	background-color:#FFF;
+	color: #000;
+	margin: 0px;
+	padding: 0px 0px 0px 20px;
+    background-color: #e7e9ee;
+    background: url(ea-bg3.png) repeat 0 0;
+}
+
+.FontLogError {
+ color: red;
+ font-weight: bold;
+}
+
+.FontTaskSuccess {
+ color: green;
+ font-weight: bold;
+}
+
+.FontTaskFailure {
+ color: red; 
+ font-weight: bold;
+}
+
+/*   
+Red = 79BD8F
+Green = 79BD8F
+Yellow = FFFF9D
+Blue = 3498DB
+*/
+
+#MainDiv {
+  width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px; 
+}
+
+#ContentDiv {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #c5c5c5;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color:#FFF; 
+  padding-bottom: 40px;
+}
+
+#FooterDiv {
+   margin-top: 15px;
+   text-align: center; 
+} 
+
+
+#HeaderDiv {
+    height: 96px; 
+    margin: 0 auto;
+    padding-top: 30px;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+#NavHeaderDiv {
+    background: white;
+    height: 66px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 200%; 
+    z-index: 10;
+    box-shadow: 0 0 10px 1px #777777; 
+/*    box-shadow: 0 0 2px 1px #373737; */
+} 
+
+#NavLogo { 
+	height: 92px;
+    left: 6px; 
+    position: absolute;
+    top: 14px;
+    width: 92px;
+    z-index: 1;
+    box-sizing: border-box;
+    border-radius: 46px;
+    box-shadow: 0 0 5px 0 #373737;
+}
+
+#newHeaderNavigation-logo {
+	background: #2c2d2d url(ea-logo.png) no-repeat center center;
+    background-clip: padding-box;
+    border: 6px solid white;
+    display: block;
+    height: 92px;
+    left: 6px;
+    position: absolute;
+    top: 14px;
+    width: 92px;
+    z-index: 15;
+    box-sizing: border-box;
+    border-radius: 46px;
+}
+
+#NavBar {
+    height: 66px;
+    list-style: none;
+    margin: 0 0 0 95px;
+    padding: 0;
+    position: relative;
+    z-index: 20;
+}
+
+#NavBar li { 
+    border-left: none;
+	float: left;
+    margin-top: 25px;
+    margin-left: 40px;
+	list-style-type: none;
+    color: #444; 
+    display: list-item;
+    text-align: -webkit-match-parent; 
+	font-size: 130%; 
+}
+
+#SubHeaderDiv {
+    height: 72px;
+    background: -webkit-linear-gradient(top, #FFFFFF 0%,#DFDBDB 100%);    border: 1px solid #c5c5c5;
+}
+
+#RHeader {
+    font-size: 30px;
+    font-weight: normal;
+	float: left;
+    margin-left: 20px;
+    margin-top: 36px;
+    font-weight: bold;
+}
+
+#ServerOnline {
+    font-size: 30px;
+    font-weight: normal;
+    margin-top: 36px;
+	float: left;  
+    margin-left: 5px;
+    color: green;
+    font-weight: bold; 
+}
+
+#ServerOffline {
+    font-size: 30px;
+    font-weight: normal;
+    margin-top: 36px;
+	float: left;   
+    margin-left: 5px;
+    color: red;
+    font-weight: bold; 
+}
+ 
+#UserName {
+    font-size: 20px;
+	font-weight: normal;
+    margin-top: 36px;
+	float: right; 
+    margin-right: 20px;
+}
+
+/*--------------------------------
+Links
+*/
+
+a:link, a:visited {
+	color: #646464;
+	text-decoration: none;
+    font-weight: bold; 
+}
+
+a:hover, a:active {
+	color: #3498DB;
+	text-decoration: none;
+}
+
+
+/*--------------------------------
+Content
+*/
+
+#StatsHeader, #RunningHeader, #SchedulesHeader, #CompletedHeader {
+	color: #3498DB;
+	font-size: 21px;
+	clear: both;
+	margin-top: 40px;
+} 
+ 
+.SubpageHeader {
+	color: #3498DB;
+	font-size: 21px;
+	clear: both; 
+	margin-top: 40px;
+}
+
+.FormHeader {
+	font-size: 14px;
+	margin-top: 14px;
+	margin-bottom: 4px;
+}
+
+/*--------------------------------
+Tables
+*/
+
+#ScheduleTable, #RunningTable, #CompletedTable, #StatsTable {
+	border-collapse: collapse;
+	text-align: right;
+	border-spacing: 0;
+	border: 0;
+	outline: 0 none;
+}
+
+th {
+	padding: 10px 16px;
+	border:none;
+	border-bottom: 2px solid #3498DB;
+}
+
+
+tr:hover {
+	color: #3498DB;
+	text-decoration: none;
+	background-color:#F8F8F8;
+}
+
+td {
+	border:none;
+   outline:none;
+   padding: 5px 16px 0;
+   vertical-align: middle;
+}
+
+
+/*-------------------------------
+Lists
+*/
+
+#LogList li {
+    padding: 0px;
+    margin-top: 10px;
+   
+}
+
+form {
+	padding-bottom: 6px;
+	margin: 0px;
+}
+
