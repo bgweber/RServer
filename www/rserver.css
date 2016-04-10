@@ -30,12 +30,6 @@ body {
  font-weight: bold;
 }
 
-/*   
-Red = 79BD8F
-Green = 79BD8F
-Yellow = FFFF9D
-Blue = 3498DB
-*/
 
 #MainDiv {
   width: 1300px;
@@ -68,7 +62,7 @@ Blue = 3498DB
     width: 100%;
     list-style: none;
     box-sizing: border-box;
-}
+} 
 
 #NavHeaderDiv {
     background: white;
@@ -79,40 +73,14 @@ Blue = 3498DB
     width: 200%; 
     z-index: 10;
     box-shadow: 0 0 10px 1px #777777; 
-/*    box-shadow: 0 0 2px 1px #373737; */
 } 
 
-#NavLogo { 
-	height: 92px;
-    left: 6px; 
-    position: absolute;
-    top: 14px;
-    width: 92px;
-    z-index: 1;
-    box-sizing: border-box;
-    border-radius: 46px;
-    box-shadow: 0 0 5px 0 #373737;
-}
 
-#newHeaderNavigation-logo {
-	background: #2c2d2d url(ea-logo.png) no-repeat center center;
-    background-clip: padding-box;
-    border: 6px solid white;
-    display: block;
-    height: 92px;
-    left: 6px;
-    position: absolute;
-    top: 14px;
-    width: 92px;
-    z-index: 15;
-    box-sizing: border-box;
-    border-radius: 46px;
-}
 
 #NavBar {
     height: 66px;
     list-style: none;
-    margin: 0 0 0 95px;
+    margin: 0 0 0 -25px;
     padding: 0;
     position: relative;
     z-index: 20;
@@ -259,4 +227,3 @@ form {
 	padding-bottom: 6px;
 	margin: 0px;
 }
-
