@@ -30,13 +30,13 @@
 <input type="text" name="name" value="ExampleTask">
 
 <h4 class="FormHeader">Perforce Directory</h4>
-<input type="text" name="path" value="//GAI/datascience/tasks/samples/HelloWorld" size=60>
+<input type="text" name="path" value="/tasks/HelloWorld/" size=60>
 
 <h4 class="FormHeader">R Script Name</h4>
-<input type="text" name="rscript" value="HelloWorld.r">
+<input type="text" name="rscript" value="Main.r">
 
 <h4 class="FormHeader">Email Address</h4>
-<input type="text" name="email" value="beweber@ea.com">
+<input type="text" name="email" value="User@YourDomain.com">
 
 <h4 class="FormHeader">Send Email on Success?</h4>
 <input type="text" name="sendemail" value="true">
