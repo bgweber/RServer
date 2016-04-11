@@ -1,7 +1,5 @@
 # RServer
 
-A respository for RServer, a project developed at Electronic Arts.
-
-RServer is currently dependent on Perforce. An open-source version that uses Git is being developed. 
+A respository for RServer, a tool for automating R scripts.
 
 ![alt tag](https://github.com/bgweber/RServer/blob/master/RServer.png)
