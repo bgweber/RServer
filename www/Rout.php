@@ -34,8 +34,7 @@ $running = array_key_exists('task', $_GET);
 if ($running > 0) {
 	$task =$_GET['task'];
 	$log =$_GET['log'];
-	$path = "C:/Tasks/RServer/scripts/" . $task . "/" . $log;
-	$path = "C:/workspace/RServer/scripts/" . $task . "/" . $log;
+	$path = "C:/RServerGit/bin/scripts/" . $task . "/" . $log;
 }
 else {
 	$path =$_GET['path'];
