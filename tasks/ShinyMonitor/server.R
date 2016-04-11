@@ -5,7 +5,7 @@ library(DT)
 library(RCurl) 
 library(xts) 
 
-logDir <- "C:\\workspace\\RServer\\"
+logDir <- "C:\\RServerGit\\bin\\"
 
 getLogs <- function(server) { 
   timestamp <- Sys.time()
