@@ -136,7 +136,7 @@ public class RServer {
 			
 			if (files.length > 0) {
 				File dir = files[files.length - 1];
-				rPath = dir.getParent() + "\\" + dir.getName();
+				rPath = dir.getParent() + "\\" + dir.getName() + "\\bin\\";
 			}
 		}
 		
