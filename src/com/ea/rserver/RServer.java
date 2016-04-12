@@ -64,9 +64,9 @@ public class RServer {
 	private static String gmailToken = null;  
 
 	// git paths 
-	private static String gitTool = "C:/RServerGit/Update.bat";  
-	private static String gitBase = "C:/RServerGit/RServer";    
-	private static String schedulePath = "/tasks/Schedule.csv";	   
+	private static String gitTool = "C:/RServerGit/Update.bat";    
+	private static String gitBase = "C:/RServerGit/RServer";     
+	private static String schedulePath = "/tasks/Schedule.csv"; 	   
 	
 	// working directory    
 	private static String scriptPath = "scripts/";   
@@ -127,6 +127,17 @@ public class RServer {
 		}
 		catch (Exception e) {  
 			e.printStackTrace();	
+		}
+	
+		// search for the R path 
+		File rDir = new File("C:/Program Files/R");		
+		if (rDir.exists()) {
+			File[] files = rDir.listFiles();
+			
+			if (files.length > 0) {
+				File dir = files[files.length - 1];
+				rPath = dir.getParent() + "\\" + dir.getName();
+			}
 		}
 		
 		// load system properties  
@@ -230,6 +241,7 @@ public class RServer {
 	 */
 	public void run() {  
 		Thread.currentThread().setName("Main server thread"); 		 
+		log("Using R Directory: " + rPath);
 
 		// force Git to refresh on start up 
 		adhocSchedules.add(new Schedule(GitTask, "", "", serverAdmin, false, "", false, null));   
@@ -1171,7 +1183,7 @@ public class RServer {
 
 			page.append("<div id=\"FooterDiv\">\n");	  		 
 			page.append("  <a href=\"https://github.com/bgweber/RServer\">RServer on GitHub</a>\n");	  		   
-			page.append("</div>\n\n");	  		     
+			page.append("</div>\n\n"); 
 
 			// html footer   
 			page.append("</div>\n</body>\n</html>\n"); 	  	  
