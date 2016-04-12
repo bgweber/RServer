@@ -17,10 +17,7 @@ First, install the required software listed below.
 
 \> C:\RServerGit\bin\Run.bat 
 
-**Test:**
-
-[http://localhost/RServer](http://localhost/RServer) 
-
+**Test:** [http://localhost/RServer](http://localhost/RServer) 
 
 ## Required Software
 
@@ -28,6 +25,7 @@ Git: https://git-scm.com/downloads
 <br>Java (64-bit JDK): http://www.oracle.com/technetwork/java/javase/downloads/ 
 <br>R: https://cran.r-project.org/bin/windows/base/
 <br>WAMP: https://sourceforge.net/projects/wampserver/ 
+<br>Visual 2012 C++ Redistributable: https://www.microsoft.com/en-us/download/details.aspx?id=30679 
 
 **For RMarkdown Reports**
 
