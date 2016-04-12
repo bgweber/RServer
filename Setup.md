@@ -1,7 +1,7 @@
 # RServer Installation 
 
 First, install the required software listed below. 
-<br>RServer has only been tested in Windows 7 (64-bit).
+<br>RServer has only been tested on Windows 7 (64-bit).
 
 ### Download files: 
 
@@ -24,8 +24,8 @@ First, install the required software listed below.
 Git: https://git-scm.com/downloads 
 <br>Java (64-bit JDK): http://www.oracle.com/technetwork/java/javase/downloads/ 
 <br>R: https://cran.r-project.org/bin/windows/base/
-<br>WAMP: https://sourceforge.net/projects/wampserver/ 
 <br>Visual 2012 C++ Redistributable: https://www.microsoft.com/en-us/download/details.aspx?id=30679 
+<br>WAMP: https://sourceforge.net/projects/wampserver/ 
 
 **For RMarkdown Reports**
 
