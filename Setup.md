@@ -32,4 +32,4 @@ Git: https://git-scm.com/downloads
 **For RMarkdown Reports**
 
 Pandoc: https://github.com/jgm/pandoc/releases/latest  
-<br>Miktek: http://miktex.org/download      
+Miktek: http://miktex.org/download      
