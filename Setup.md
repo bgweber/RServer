@@ -28,7 +28,7 @@ On windows 8, run as administrator.
 Git: https://git-scm.com/downloads 
 <br>Java (64-bit JDK): http://www.oracle.com/technetwork/java/javase/downloads/ 
 <br>R: https://cran.r-project.org/bin/windows/base/
-<br>Visual 2012 C++ Redistributable: https://www.microsoft.com/en-us/download/details.aspx?id=30679 
+<br>Visual 2012 C++ Redistributable (both 32-bit and 64-bit downloads): https://www.microsoft.com/en-us/download/details.aspx?id=30679 
 <br>WAMP: https://sourceforge.net/projects/wampserver/ 
 
 **For RMarkdown Reports**
