@@ -11,6 +11,8 @@ First, install the required software listed below.
 
 **Build:**
 
+Set up your [Java Path](https://github.com/bgweber/RServer/blob/master/Setup.md#setting-up-java) 
+
 \> C:\RServerGit\RServer\Compile.bat 
 
 **Run:**
@@ -43,4 +45,6 @@ Select: Advanced System settings -> Environment Variables -> System Variables
 Append your java location to the end, For example ";C:\Program Files\Java\jdk1.8.0_77\bin"
 
 To Test, run “CMD” then type javac at the console.
+
+![alt tag](https://github.com/bgweber/RServer/blob/master/JavaPath.png)
 
