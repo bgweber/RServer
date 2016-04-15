@@ -1,7 +1,7 @@
 # RServer Installation 
 
 First, install the required software listed below. 
-<br>RServer has only been tested on Windows 7 (64-bit).
+<br>RServer has only been tested on Windows 7 & 8 (64-bit).
 
 ### Download files: 
 
