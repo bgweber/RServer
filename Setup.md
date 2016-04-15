@@ -17,6 +17,8 @@ Set up your [Java Path](https://github.com/bgweber/RServer/blob/master/Setup.md#
 
 **Run:**
 
+On windows 8, run as administrator. 
+
 \> C:\RServerGit\bin\Run.bat 
 
 **Test:** [http://localhost/RServer](http://localhost/RServer) 
