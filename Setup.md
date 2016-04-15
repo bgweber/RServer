@@ -30,7 +30,7 @@ Git: https://git-scm.com/downloads
 <br>R: https://cran.r-project.org/bin/windows/base/
 <br>Pandoc: https://github.com/jgm/pandoc/releases/latest  
 Miktek: http://miktex.org/download      
-<br>Visual 2012/2015 C++ Redistributables for WAMP (both 32-bit and 64-bit): 
+Visual 2012/2015 C++ Redistributables for WAMP (both 32-bit and 64-bit): 
 - https://www.microsoft.com/en-us/download/details.aspx?id=30679 
 - https://www.microsoft.com/en-us/download/confirmation.aspx?id=48145 
 
