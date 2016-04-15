@@ -40,9 +40,9 @@ Miktek: http://miktex.org/download
 You'll need to add Java to the system path so that the javac and jar commands work. 
 
 Open: Control Panel -> System and Security -> System
-Select: Advanced System settings -> Environment Variables -> System Variables 
+<br>Select: Advanced System settings -> Environment Variables -> System Variables 
 
-Append your java location to the end, For example ";C:\Program Files\Java\jdk1.8.0_77\bin"
+Append your java location to the end. For example ";C:\Program Files\Java\jdk1.8.0_77\bin"
 
 To Test, run “CMD” then type javac at the console.
 
