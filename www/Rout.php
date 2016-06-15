@@ -35,22 +35,11 @@ if ($running > 0) {
 	$task =$_GET['task'];
 	$log =$_GET['log'];
 	
-	if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-		$path = "C:/RServer/scripts/" . $task . "/" . $log;
-	}
-	else {
-		$path = "/var/www/html/RServer/scripts/" . $task . "/" . $log;  
-	}
+	$path = "/var/www/html/RServer/scripts/" . $task . "/" . $log;  
 }
 else {
 	$path =$_GET['path'];
-	
-	if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-		$path = "C:/wamp/www/RServer/Rout/" . $path;
-	}
-	else {
-		$path = "/var/www/html/RServer/Rout/" . $path; 
-	}
+	$path = "/var/www/html/RServer/Rout/" . $path; 
 }
 
  if (!file_exists($path)) {
