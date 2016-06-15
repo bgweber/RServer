@@ -56,6 +56,10 @@ else {
  else {
 	echo "Path: " . $path;
 	
+ 	$handle = fopen($path, "r");
+	if ($handle) {
+		echo "<p>Got handle: " . $path;
+	}
 }
 ?>
 
