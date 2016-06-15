@@ -42,6 +42,8 @@ else {
 	$path = "/var/www/html/RServer/Rout/" . $path; 
 }
 
+$path = ".Rout"
+
  if (!file_exists($path)) {
 	echo "Log file not found: " . $path;
  }
