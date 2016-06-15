@@ -3,4 +3,4 @@ Git,,,Daily,5:00,User@YourDomain.com,FALSE,,FALSE
 R_Server_Tasks, /tasks/RServerTasks, BuildReports.r, Hourly, 8:00, User@YourDomain.com,FALSE   ,,
 Hello_World,/tasks/HelloWorld,Main.r,Hourly,19:35, User@YourDomain.com, true,,false 
 Hello_Daily,/tasks/HelloWorld,Main.r,Daily,11:00, User@YourDomain.com, true,,false 
-Server_Monitor,/tasks/ShinyMonitor,Main.r,Now,, User@YourDomain.com, false,8080,true
+Server_Monitor,/tasks/ShinyMonitor,Main.R,Now,, User@YourDomain.com, false,8080,true
