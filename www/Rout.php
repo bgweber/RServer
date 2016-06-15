@@ -36,7 +36,7 @@ if ($running > 0) {
 	$log =$_GET['log'];
 	
 	if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-		$path = "C:/RServerGit/bin/scripts/" . $task . "/" . $log;
+		$path = "C:/RServer/scripts/" . $task . "/" . $log;
 	}
 	else {
 		$path = "/var/www/html/RServer/scripts/" . $task . "/" . $log;  
