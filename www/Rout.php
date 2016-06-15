@@ -54,13 +54,25 @@ else {
 	echo "Log file not found: " . $path;
  }
  else {
-	echo "Path: " . $path;
-	
- 	$handle = fopen($path, "r");
+	$handle = fopen($path, "r"); 
+
 	if ($handle) {
-		echo "<p>Got handle: " . $path;
-	}
-}
+		while (($line = fgets($handle)) !== false) {
+			// process the line read.
+			$line = trim($line);
+			echo "$line" . "<br>";    
+			
+			if ($line == "user  system elapsed" || $line == "Execution halted") {  
+				$running = 0; 
+			}
+
+		}
+		
+		if($running > 0) {
+			echo "<br><A HREF=\"javascript:history.go(0)\">Refresh</A>";
+		}
+	} 	
+ }
 ?>
 
  </div>
