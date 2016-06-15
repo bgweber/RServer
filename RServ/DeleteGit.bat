@@ -1,0 +1,1 @@
+rmdir RServer /s /q
