@@ -32,7 +32,12 @@ $timestamp = time();
 
 echo "Task: $name";
 
-$file = fopen("requests/$name$timestamp.kp", "w");
+$file = fopen("/var/www/html/RServer/requests/$name$timestamp.kp", "w");
+
+if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+  $file = fopen("requests/$name$timestamp.kp", "w");
+}
+
 fwrite($file, "$name");
 fclose($file);
 
