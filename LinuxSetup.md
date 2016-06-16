@@ -3,9 +3,7 @@ Set up a AWS AMI Machine
 Once complete, browse to http://machineurl/RServer
 
 sudo yum -y install git
-
-sudo yum -y install httpd
-
+<br>sudo yum -y install httpd
 sudo service httpd start 
 
 sudo yum -y install php php-mysql
