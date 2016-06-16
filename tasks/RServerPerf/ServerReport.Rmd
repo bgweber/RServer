@@ -1,0 +1,35 @@
+---
+title: "R Server Activity"
+author: Ben Weber
+output: html_document
+classoption: landscape  
+geometry: margin=0.5in 
+---
+
+Last report update:
+```{r, echo=FALSE, results='asis'}
+cat(format(Sys.time(), "%a %b %d %X %Y %Z"))
+```
+
+Server Activity:
+
+```{r, echo=FALSE, warning = FALSE, fig.width=10.5, fig.height=6}
+source("Activity.R") 
+plotServerEvents() 
+```
+
+\pagebreak 
+Server Events (Past 7 Days):  
+
+```{r, echo=FALSE, warning = FALSE, fig.width=8, fig.height=4.5} 
+events = loadTaskData()
+plotTasks(events)  
+```
+
+
+Most Recent Errors: 
+
+```{r, echo=FALSE, comment=''}  
+listRecentErrors()
+``` 
+
