@@ -5,8 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
-import java.net.InetAddress;
+import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +16,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.Properties;
 import java.util.TreeMap;
-
+ 
 import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -25,7 +26,7 @@ import javax.mail.internet.MimeMessage;
 import org.hyperic.sigar.Sigar;
 /**
  * Main class for running the R Server. 
- * 
+ *  
  * To run on windows use:
  *  -DwampWWW=C:/wamp/www 
  * 
@@ -54,7 +55,7 @@ public class RServer {
 	private static String jobsDir = wampWWW + "/RServer/jobs/";     
 	private static String indexPagePath = wampWWW + "/RServer/index.php";  	   
 	private static String performanceLogDir = wampWWW + "/RServer/perf";       
-
+		
 	// email config  
 	private static String serverEmail = "RServer@YourDomain.com";       
 	private static String serverAdmin = "RserverAdmin@YourDomain.com";   
@@ -64,6 +65,7 @@ public class RServer {
 	private static String perforceBase = "RServer";  
 	private static String schedulePath = "/tasks/Schedule.csv";	   
 	private static String perforceWWW = "/www";
+	private static String gitDepot = "https://github.com/bgweber/RServer"; 
 	
 	// working directory   
 	private static String scriptPath = "/scripts/";    
@@ -103,7 +105,6 @@ public class RServer {
 	private static final String PerforceTask = "Git";  
 
 	// host config 
-	private static String hostName = null;
 	private static String fullHostName = null;
 
 	// record how long updates took
@@ -117,14 +118,18 @@ public class RServer {
 
 		// load the host name 
 		try { 
-			hostName = InetAddress.getLocalHost().getHostName();   
-			fullHostName = InetAddress.getLocalHost().getCanonicalHostName();    
+			//fullHostName = InetAddress.getLocalHost().getCanonicalHostName();    	
+			 
+			URL whatismyip = new URL("http://checkip.amazonaws.com");
+			BufferedReader in = new BufferedReader(new InputStreamReader(whatismyip.openStream()));
+			fullHostName = in.readLine();
+			in.close();
 		}
 		catch (Exception e) { 
-			e.printStackTrace();   
+			e.printStackTrace();    
 		}
 		
-		// Set up wamp directories 
+		// Set up wamp directories  
 		wampWWW = getProperty("wampWWW", wampWWW);     
 		logDir = wampWWW + "/RServer/logs/";
 		requestsDir = wampWWW + "/RServer/requests/";
@@ -186,6 +191,8 @@ public class RServer {
 		// set up Perforce directories 
 		perforceBase = getProperty("perforceBase", perforceBase);   
 		schedulePath = perforceBase + getProperty("schedulePath", "" + schedulePath);   
+		rPath = getProperty("rPath", rPath);   
+		perforceBase = getProperty("perforceBase", perforceBase);   
 		 
 		// delete prior performance log
 		 File logFile = new File(performanceLogDir + "/ServerLoad.csv");
@@ -427,7 +434,7 @@ public class RServer {
 			log("Updating Git files");
 			
 			try {				
-				GitScript.update(isLinux);
+				GitScript.update(isLinux, gitDepot); 
 			} 
 			catch (Exception e) {
 				log("Git update failed due to Excepton: " + e.getMessage());
@@ -964,8 +971,8 @@ public class RServer {
 			page.append("    <th>Property</th>\n    <th>Value</th>\n");     
 			page.append("  </thead>\n"); 
 			
-			if (hostName != null) { 
-				page.append("    <tr><td>Server Name</td><td>" + hostName + "</td></tr>\n");
+			if (fullHostName != null) { 
+				page.append("    <tr><td>Server Name</td><td>" + fullHostName + "</td></tr>\n");
 			}
  
 			page.append("    <tr><td>Server Updated</td><td>" + new Date(System.currentTimeMillis()).toString() + "</td></tr>\n"); 
@@ -1184,7 +1191,7 @@ public class RServer {
 			 double usedMem = (sigar.getMem().getTotal() - sigar.getMem().getFree())/1024/1024/1024.0;
 			 int threads = Thread.activeCount();
 			 long currentTime = System.currentTimeMillis();			 
-			 String logEntry = hostName + "," + bootTime + "," + currentTime + "," + cpuLoad + "," + threads + "," 
+			 String logEntry = fullHostName + "," + bootTime + "," + currentTime + "," + cpuLoad + "," + threads + "," 
 					 		+ appUsedMem + "," + appTotalMem + "," + usedMem + "," + totalMem + ","
 					 		+ updateHtmlTime + "," + updatePerfLogTime;
 
