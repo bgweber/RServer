@@ -22,7 +22,7 @@ if (length(args) > 0) {
   port <- args[1] 
   ip <- as.character(readLines("http://ipinfo.io/ip"))
   print(paste("Using IP:", ip))
-  runApp(port=as.integer(port), launch.browser = FALSE, host = ip)
+  runApp(port=as.integer(port), launch.browser = FALSE, host = "172.31.53.98")
   
 } else {
   runApp()
