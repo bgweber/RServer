@@ -19,8 +19,10 @@ args <- commandArgs(TRUE)
 if (length(args) > 0) {  
   
   # get the port 
-  port <- args[1]   
-  runApp(port=as.integer(port))
+  port <- args[1] 
+  ip <- as.character(readLines("http://ipinfo.io/ip"))
+  print(paste("Using IP:", ip))
+  runApp(port=as.integer(port), launch.browser = FALSE, host = ip)
   
 } else {
   runApp()
