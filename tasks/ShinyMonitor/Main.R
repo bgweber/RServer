@@ -18,11 +18,19 @@ library(xts)
 args <- commandArgs(TRUE)  
 if (length(args) > 0) {  
   
-  # get the port 
   port <- args[1] 
-  ip <- as.character(readLines("http://ipinfo.io/ip"))
-  print(paste("Using IP:", ip))
-  runApp(port=as.integer(port), launch.browser = FALSE, host = "172.31.53.98")
+
+  # get the IP address 
+  if (Sys.info()['sysname'] == "Windows") {
+    
+    x <- system("ipconfig", intern=TRUE)
+    z <- x[grep("IPv4", x)] 
+    server <- gsub(".*? ([[:digit:]])", "\\1", z)[1]
+  } else {
+    server <- system("ifconfig | perl -nle 's/dr:(\\S+)/print $1/e'", intern=TRUE)[1]
+  }
+
+  runApp(port=as.integer(port), launch.browser = FALSE, host = server)
   
 } else {
   runApp()
