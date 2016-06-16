@@ -30,7 +30,53 @@ import org.hyperic.sigar.Sigar;
  * To run on windows use:
  *  -DwampWWW=C:/wamp/www 
  * 
- * @author beweber 
+ * 	Runtime Properies (e.g. -DgcRefresh=120000)
+ * 	---------------------------------------------------------
+ * 
+ * 	wampWWW: The full-qualified directory for where to place html files. /RServer will be added to this path     
+ *	default: /var/www/html
+ * 
+ *	mainThreadRefresh: how often to check the status of jobs?
+ *	default: 2000 (ms)
+ *  
+ *	statusThreadRefresh: how often to create a new php page? 
+ *	default: 5000 (ms) 
+ *  
+ *	gcRefresh: how often to run the garbage collector? 
+ *	default: 60000 (ms)
+ *  
+ *	completedTaskSize: how many completed tasks to show at the bottom of the page?  
+ *	default: 100 
+ *  
+ *	logHistorySize: On the index.php page, how many log entries to show? 		
+ *	default: 20
+ *  
+ *	maxJobFiles: how many files to allow in the job history folder before cleaning up?  		
+ *	default: 5000
+ *  
+ *	pageRefreshTime: for often to refresh the page (for web clients)? 		 
+ *	default: 5000 (ms) 
+ *  
+ *	performanceLogSize: how many entries to maintain in the performance file (used by the server monitor app) 		
+ *	default: 200
+ *   
+ *	serverEmail: Which account should send emails about RServer?
+ *	default: "RServer@YourDomain.com"
+ *
+ *	serverAdmin: Who is your admin for RServer?
+ *	default: "RserverAdmin@YourDomain.com"
+ *  
+ *	smtp: the smtp server to use for email  		
+ *	default: "mail.yourdomain.com"
+ *  
+ *	perforceBase: the name of Github project (used as the base directory for checking out files)   
+ *	default: "RServer"
+ *  
+ *	schedulePath: Where the schedule file is located within the Github depot   
+ *	default: "/tasks/Schedule.csv"
+ *  
+ *	rPath: The full qualified path to your R bin directory (Windows Only)    
+ *	default: "C:/Program Files/R/R-3.2.2/bin/"
  */ 
 public class RServer {     
 	
