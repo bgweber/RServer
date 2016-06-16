@@ -3,12 +3,10 @@ import java.io.File;
 public class GitScript {
 
 	public static void main(String[] args) throws Exception {
-		update(false); 
+		update(false, "https://github.com/bgweber/RServer"); 
 	}
 	
-	public static void update(boolean isLinux) throws Exception {
-				
-		System.out.println("Running Git!");
+	public static void update(boolean isLinux, String depot) throws Exception {
 		
 		if (isLinux) {
 			Runtime.getRuntime().exec("sudo rm -r RServer").waitFor(); 	        	 
@@ -18,7 +16,7 @@ public class GitScript {
 			pb.directory(new File(System.getProperty("user.dir")));
 			pb.start().waitFor();  
 		}
-
-		Runtime.getRuntime().exec("git clone https://github.com/bgweber/RServer").waitFor(); 	        	
+ 
+		Runtime.getRuntime().exec("git clone " + depot).waitFor(); 	        	
 	}	
 }
