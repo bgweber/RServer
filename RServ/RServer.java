@@ -333,8 +333,9 @@ public class RServer {
 									
 									try {  
 										runningTask.setAborted(true);   
-										log("Sending command: " + "kill -9 " + runningTask.getPID()); 
-										Process p = Runtime.getRuntime().exec("kill -9 " + runningTask.getPID());  
+										log("Sending command: " + "pkill -TERM -P " + runningTask.getPID()); 
+										Process p = Runtime.getRuntime().exec("pkill -TERM -P " + runningTask.getPID());  
+//										Process p = Runtime.getRuntime().exec("kill -9 " + runningTask.getPID());  
 //										Process p = Runtime.getRuntime().exec("taskkill /F /T /PID " + runningTask.getPID());  
 								        p.waitFor(); 
 								    }  
