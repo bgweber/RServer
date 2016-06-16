@@ -1,4 +1,7 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.InetAddress;
+import java.net.URL;
 /**
  * A task is an instance of a schedule that has been selected to run. 
  * 
@@ -73,12 +76,21 @@ public class Task {
 		this.isPython = !rScript.toLowerCase().endsWith(".r"); 
 
 		if (shinyApp) {
-			shinyUrl = InetAddress.getLocalHost().getCanonicalHostName() + ":" + parameters.split(" ")[0];
+			try { 
+				URL whatismyip = new URL("http://checkip.amazonaws.com");
+				BufferedReader in = new BufferedReader(new InputStreamReader(whatismyip.openStream()));
+				shinyUrl = "http://" + in.readLine() + ":" + parameters.split(" ")[0];
+				in.close();
+			}
+			catch (Exception e) { 
+				e.printStackTrace();
+				shinyUrl = InetAddress.getLocalHost().getCanonicalHostName() + ":" + parameters.split(" ")[0];
+			}			
 		}
 	}
 
 	
-	/* 
+	/*  
 	 * Setters  
 	 */ 
 	public void setEndTime(long endTime) {
