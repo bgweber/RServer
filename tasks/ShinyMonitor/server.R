@@ -153,7 +153,7 @@ shinyServer(function(input, output, session) {
       }
 
     dygraph(combined) %>%
-        dyLegend(labelsSeparateLines = T, width = 150, show = "always") %>%       
+        dyLegend(labelsSeparateLines = T, width = 170, show = "always") %>%       
         dyAxis("y", label = "CPU Load (%)", valueRange = c(0, 100.2))       
     }, error = function(cond) {
       message(cond)
@@ -203,7 +203,7 @@ shinyServer(function(input, output, session) {
       }
 
       dygraph(combined) %>%  
-        dyLegend(labelsSeparateLines = T, width = 150, show = "always") %>%        
+        dyLegend(labelsSeparateLines = T, width = 170, show = "always") %>%        
         dyAxis("y", label = "Memory Used (GB)", valueRange = c(0, 1.2*maxY))        
     }, error = function(cond) {
       message(cond) 
