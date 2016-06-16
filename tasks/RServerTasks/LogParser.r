@@ -1,4 +1,9 @@
 
+path <- "/var/www/html/RServer/logs"
+
+if (Sys.info()['sysname'] == "Windows") { 
+  path <- "C:/wamp/www/RServer/logs"
+}
 
 if ("DT" %in% rownames(installed.packages()) == FALSE) {
   install.packages("DT", repos='http://cran.us.r-project.org') 
@@ -8,7 +13,7 @@ library(DT)
 loadTaskData <- function(daysHistory = 60) { 
   events <- data.frame()  
   
-  for (file in list.files("C:/wamp/www/RServer/logs", full.names = TRUE)) { 
+  for (file in list.files(path, full.names = TRUE)) { 
     date <- as.Date(strsplit(file, "_", fixed = TRUE)[[1]][2]) 
     daysAgo <- as.numeric(Sys.Date() - date, units = "days")
     
