@@ -13,7 +13,7 @@ source("LogParser.r")
 events <- loadTaskData()
 
 if (nrow(events) > 0) {
-  datatable(events, rownames = FALSE, options = list(pageLength = 20), colnames = c("Task Name", "Completion Date (PST)", "Result")) %>% 
+  datatable(events, rownames = FALSE, options = list(pageLength = 20), colnames = c("Task Name", "Completion Date (UTC)", "Result")) %>% 
     formatStyle('Outcome', color = styleEqual(c('Aborted', 'Failure', 'Success'), c('red', 'red', 'green')), fontWeight = 'bold') 
 } else {
   cat("No scripts have completed") 
