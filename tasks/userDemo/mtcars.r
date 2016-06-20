@@ -5,8 +5,8 @@ Sys.sleep(15)
 
 
 print("Saving RData file")
-dir.create("C:/wamp/www/RServer/reports/mtcars")
-save(mtcars, file = "C:/wamp/www/RServer/reports/mtcars/mtcars.RData")
+dir.create("/var/www/html/RServer/reports/mtcars")
+save(mtcars, file = "/var/www/html/RServer/reports/mtcars/mtcars.RData")
 
 
 fit <- lm(mpg~am + wt + hp, data = mtcars) 
