@@ -15,4 +15,4 @@ summary(fit)
 
 print("Saving Model")
 Sys.sleep(10)
-save(fit, file = "C:/wamp/www/RServer/reports/mtcars/Model.RData")
+save(fit, file = "/var/www/html/RServer/reports/mtcars/Model.RData")
