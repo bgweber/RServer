@@ -48,10 +48,15 @@ loadTaskData <- function(daysHistory = 60) {
           atts <- strsplit(line, ": ", fixed = TRUE)[[1]]
           timestamp <- atts[1]
           
-          if (grepl("PDT", line)) {
-            timestamp <- gsub("PDT ","", timestamp)
-          }else {
-            timestamp <- gsub("PST ","", timestamp)
+          if (grepl("UTC", line)) {
+            timestamp <- gsub("UTC ","", timestamp)
+          }
+          else {
+            if (grepl("PDT", line)) {
+              timestamp <- gsub("PDT ","", timestamp)
+            }else {
+              timestamp <- gsub("PST ","", timestamp)
+            }
           }
 
           timestamp <- strptime(timestamp, "%a %b %d %H:%M:%S %Y", tz = "PST8PDT") 
