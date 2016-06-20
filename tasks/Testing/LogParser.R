@@ -50,6 +50,7 @@ loadTaskData <- function(daysHistory = 60) {
           
           if (grepl("UTC", line)) {
             timestamp <- gsub("UTC ","", timestamp)
+            timestamp <- strptime(timestamp, "%a %b %d %H:%M:%S %Y", tz = "UTC") 
           }
           else {
             if (grepl("PDT", line)) {
@@ -57,9 +58,10 @@ loadTaskData <- function(daysHistory = 60) {
             }else {
               timestamp <- gsub("PST ","", timestamp)
             }
+            
+            timestamp <- strptime(timestamp, "%a %b %d %H:%M:%S %Y", tz = "PST8PDT") 
           }
 
-          timestamp <- strptime(timestamp, "%a %b %d %H:%M:%S %Y", tz = "PST8PDT") 
           events <- rbind(events, data.frame(TaskName = c(task), CompletionTime = c(as.character(timestamp)), Outcome = c(outcome), timestamp = c(timestamp)))   
         } 
       }
