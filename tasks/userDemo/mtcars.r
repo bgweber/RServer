@@ -1,6 +1,6 @@
 str(mtcars)
 
-print("Sleeping for 20 seconds")
+print("Sleeping for 15 seconds")
 Sys.sleep(15)
 
 
