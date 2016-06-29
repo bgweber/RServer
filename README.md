@@ -1,7 +1,7 @@
 # RServer
 
 Ben G. Weber
-@bgweber
+<br>[@bgweber](https://twitter.com/bgweber)
 
 <p>A respository for RServer, a tool for automating R scripts developed by [Electronic Arts] (https://github.com/electronicarts).
 
