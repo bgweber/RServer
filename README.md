@@ -1,6 +1,9 @@
 # RServer
 
-A respository for RServer, a tool for automating R scripts developed by [Electronic Arts] (https://github.com/electronicarts).
+Ben G. Weber
+@bgweber
+
+<p>A respository for RServer, a tool for automating R scripts developed by [Electronic Arts] (https://github.com/electronicarts).
 
 [Demo](http://ec2-52-90-176-222.compute-1.amazonaws.com/RServer/index.php) on AWS
 
