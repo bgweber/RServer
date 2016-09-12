@@ -1,3 +1,4 @@
+<!-- Copyright (C) 2016 Electronic Arts Inc.  All rights reserved. -->
 <html>
 <head>
   <title>R Server Reports</title>
