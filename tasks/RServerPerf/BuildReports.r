@@ -1,4 +1,4 @@
-
+# Copyright (C) 2016 Electronic Arts Inc.  All rights reserved.
 
 libraries <- c("rmarkdown", "yaml", "scales")  
 for (lib in libraries) {
