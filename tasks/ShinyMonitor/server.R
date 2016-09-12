@@ -1,4 +1,4 @@
-
+# Copyright (C) 2016 Electronic Arts Inc.  All rights reserved.
 library(shiny)
 library(dygraphs) 
 library(DT) 
