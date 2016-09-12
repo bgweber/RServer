@@ -1,4 +1,4 @@
-
+# Copyright (C) 2016 Electronic Arts Inc.  All rights reserved.
 
 path <- "/var/www/html/RServer/logs"
 
