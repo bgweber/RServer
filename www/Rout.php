@@ -1,3 +1,4 @@
+<!-- Copyright (C) 2016 Electronic Arts Inc.  All rights reserved. -->
 <?php
 $running = array_key_exists('task', $_GET);
 ?>
