@@ -1,3 +1,4 @@
+# Copyright (C) 2016 Electronic Arts Inc.  All rights reserved.
 str(mtcars)
 
 print("Sleeping for 15 seconds")
