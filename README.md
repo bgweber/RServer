@@ -11,3 +11,8 @@ A respository for RServer, a tool for automating R scripts developed by [Electro
 * [Windows (Deprecated)] (https://github.com/bgweber/RServer/blob/master/Setup.md)
 
 ![alt tag](https://github.com/bgweber/RServer/blob/master/RServerSC.png)
+
+
+### Licence 
+
+[Licence](https://github.com/bgweber/RServer/blob/master/LICENCE): This project is available under a modified BSD licence. 
