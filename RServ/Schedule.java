@@ -1,4 +1,4 @@
-// // Copyright (C) 2016 Electronic Arts Inc.  All rights reserved.
+// Copyright (C) 2016 Electronic Arts Inc.  All rights reserved.
 import java.util.Calendar;
 import java.util.Date;
 /**
