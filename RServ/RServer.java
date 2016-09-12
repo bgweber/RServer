@@ -1,3 +1,4 @@
+// // Copyright (C) 2016 Electronic Arts Inc.  All rights reserved.
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
