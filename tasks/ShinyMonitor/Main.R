@@ -1,4 +1,4 @@
-
+# Copyright (C) 2016 Electronic Arts Inc.  All rights reserved.
 
 libraries <- c("shiny", "shinythemes", "dygraphs", "DT", "RCurl", "xts")
 for (lib in libraries) {
