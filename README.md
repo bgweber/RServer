@@ -16,3 +16,5 @@ A respository for RServer, a tool for automating R scripts developed by [Electro
 ### Licence 
 
 [Licence](https://github.com/bgweber/RServer/blob/master/LICENCE): This project is available under a modified BSD licence. 
+
+[Contributing](https://github.com/electronicarts/EASTL/blob/master/CONTRIBUTING.md): Before contributing to this project, the CLA needs to be signed by each contributor.   
