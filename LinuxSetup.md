@@ -12,11 +12,11 @@ sudo yum -y install git
 <br>sudo yum -y install R 
 <br>sudo yum -y install libcurl-devel
 <br>sudo yum -y install unixODBC-devel
-<br>wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.rpm" 
-<br>sudo yum -y localinstall jdk-8u60-linux-x64.rpm
-<br>export JAVA_HOME=/usr/java/jdk1.8.0_60/
-<br>export JRE_HOME=/usr/java/jdk1.8.0_60/jre/
-<br>export PATH=$PATH:/usr/java/jdk1.8.0_60/bin:/usr/java/jdk1.8.0_60/jre/bin 
+<br>wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz
+<br>sudo yum -y localinstall jdk-8u151-linux-x64.rpm
+<br>export JAVA_HOME=/usr/java/jdk1.8.0_151/
+<br>export JRE_HOME=/usr/java/jdk1.8.0_151/jre/
+<br>export PATH=$PATH:/usr/java/jdk1.8.0_151/bin:/usr/java/jdk1.8.0_151/jre/bin 
 <br>sudo R CMD javareconf
 <br>sudo yum -y update
 <br>sudo yum -y install git
